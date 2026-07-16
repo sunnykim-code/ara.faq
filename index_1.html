@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>빛 조절 렌즈™ FAQ | Aracare</title>
+<link rel="stylesheet" as="style" crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --plum:#8a2a8a;
+    --plum-deep:#6f1f6f;
+    --magenta:#c724b1;
+    --ink:#2b2b2f;
+    --ink-soft:#4a4a52;
+    --line:#e7e2ea;
+    --card:#f5f4f6;
+    --card-hover:#efedf2;
+    --bg:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Pretendard",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans KR",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:56px 24px 96px;}
+
+  .page-title{font-size:28px;font-weight:800;color:var(--plum);letter-spacing:-0.02em;margin-bottom:6px;}
+  .page-sub{font-size:15px;color:var(--ink-soft);margin-bottom:32px;}
+
+  .tabs{display:flex;gap:8px;margin-bottom:28px;border-bottom:2px solid var(--line);}
+  .tab{
+    appearance:none;border:none;background:none;cursor:pointer;font-family:inherit;
+    font-size:16px;font-weight:700;color:#9a9aa2;padding:12px 20px;position:relative;
+    transition:color .2s;letter-spacing:-0.01em;
+  }
+  .tab .cnt{font-size:12px;font-weight:600;color:#b9b9c0;margin-left:6px;}
+  .tab:hover{color:var(--ink-soft);}
+  .tab.active{color:var(--plum);}
+  .tab.active .cnt{color:var(--magenta);}
+  .tab.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:3px;background:var(--magenta);border-radius:3px 3px 0 0;}
+
+  .group-label{font-size:13px;font-weight:700;color:var(--magenta);text-transform:uppercase;letter-spacing:0.08em;margin:26px 4px 12px;}
+  .group-label:first-of-type{margin-top:4px;}
+
+  .item{background:var(--card);border-radius:10px;margin-bottom:10px;border-bottom:3px solid transparent;overflow:hidden;transition:border-color .25s,background .2s;}
+  .item.open{border-bottom-color:var(--magenta);background:#faf9fb;}
+  .q{
+    width:100%;text-align:left;appearance:none;border:none;background:none;cursor:pointer;font-family:inherit;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;
+    font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-0.01em;transition:color .2s;
+  }
+  .item:hover .q{background:var(--card-hover);}
+  .item.open .q{color:var(--plum);background:transparent;}
+  .icon{flex-shrink:0;width:24px;height:24px;border-radius:50%;border:1.5px solid #cfc7d4;position:relative;transition:all .25s;}
+  .item.open .icon{border-color:var(--magenta);background:var(--magenta);}
+  .icon::before,.icon::after{content:"";position:absolute;background:#a99fb0;transition:background .25s,transform .25s;top:50%;left:50%;}
+  .icon::before{width:11px;height:1.5px;transform:translate(-50%,-50%);}
+  .icon::after{width:1.5px;height:11px;transform:translate(-50%,-50%);}
+  .item.open .icon::before,.item.open .icon::after{background:#fff;}
+  .item.open .icon::after{transform:translate(-50%,-50%) scaleY(0);}
+
+  .a-wrap{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .a{padding:0 22px 22px;font-size:15px;color:var(--ink-soft);}
+  .a p{margin:0 0 8px;}
+  .a p:last-child{margin-bottom:0;}
+  .a ul{list-style:none;margin:6px 0 8px;padding:0;}
+  .a ul li{position:relative;padding-left:18px;margin-bottom:5px;}
+  .a ul li::before{content:"";position:absolute;left:4px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--magenta);}
+  .a .step{counter-reset:s;list-style:none;margin:6px 0 8px;padding:0;}
+  .a .step li{position:relative;padding-left:26px;margin-bottom:6px;}
+  .a .step li::before{
+    counter-increment:s;content:counter(s);position:absolute;left:0;top:1px;width:19px;height:19px;
+    border-radius:50%;background:var(--plum);color:#fff;font-size:11px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .a .note{margin-top:10px;padding:10px 14px;background:#f3eaf3;border-radius:8px;font-size:13.5px;color:var(--plum-deep);border-left:3px solid var(--magenta);}
+  .a .note b{font-weight:700;}
+  .a .ex{margin:6px 0 8px;padding:10px 14px;background:#eef0f4;border-radius:8px;font-size:14px;color:#3d3d45;font-variant-numeric:tabular-nums;}
+  .a .ex .row{display:flex;justify-content:space-between;gap:12px;padding:2px 0;}
+  .a .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--plum);background:#efe3ef;border-radius:5px;padding:2px 8px;margin-bottom:8px;}
+  .a strong{color:var(--ink);font-weight:700;}
+  .a .warn{color:#b23a48;font-weight:700;}
+  .panel{display:none;}
+  .panel.active{display:block;animation:fade .3s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+
+  @media(max-width:560px){
+    .wrap{padding:36px 16px 72px;}
+    .page-title{font-size:23px;}
+    .q{font-size:15px;padding:17px 18px;}
+    .a{padding:0 18px 18px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 class="page-title">빛 조절 렌즈™ 자주 묻는 질문</h1>
+  <p class="page-sub">LAL(렌즈·임상 계획) 및 LDD(장비·시술) 관련 임상 참고 자료</p>
+
+  <div class="tabs" id="tabs"></div>
+  <div id="content"></div>
+</div>
+
+<script>
+/* ------------------------------------------------------------------
+   데이터 구조: 카테고리 → 그룹 → 질문/답변
+   질문 추가·수정은 이 배열만 편집하면 됩니다.
+------------------------------------------------------------------ */
+const DATA = [
+  {
+    key:"LAL", label:"LAL",
+    groups:[
+      {
+        name:"렌즈 특성",
+        items:[
+          {q:"LAL은 비구면 렌즈인가요?",
+           a:`<p>LAL은 <strong>-0.375µm의 음의 구면수차(Negative Spherical Aberration)</strong>를 적용한 비구면 렌즈입니다.</p>`},
+          {q:"LAL의 렌즈 두께는 어떻게 되나요?",
+           a:`<p>도수가 높을수록 렌즈가 두꺼워지고, 도수가 낮을수록 얇아집니다.</p>
+              <p>렌즈 두께는 약 <strong>0.9 ~ 1.3mm</strong>입니다.</p>`},
+        ]
+      },
+      {
+        name:"타겟 · 렌즈 선택",
+        items:[
+          {q:"LAL 원거리·근거리 권장 도수가 있나요?",
+           a:`<p><span class="tag">원거리</span> LAL / LAL+ : <strong>Plano ~ +0.25D</strong></p>
+              <p><span class="tag">근거리</span> LAL : <strong>-0.50 ~ -1.00D</strong> &nbsp;/&nbsp; LAL+ : <strong>-0.50 ~ -0.75D</strong></p>`},
+          {q:"동공은 몇 mm 이상 확장되어야 하나요?",
+           a:`<p>LAL의 광학부 직경은 6mm이므로, 정확한 치료를 위해 최소 <strong>6mm 이상의 동공 확장</strong>을 권장합니다.</p>`},
+          {q:"K와 TK 중 어느 값을 사용하는 것이 좋나요?",
+           a:`<p>RxSight는 특정 측정 방법을 권장하지 않습니다.</p>
+              <p>평소 Surgeon이 사용하는 <strong>Lens Calculation 방식을 그대로</strong> 사용하는 것을 권장합니다.</p>`},
+          {q:"양안을 모두 Plano를 목표로 수술하는 이유는 무엇인가요?",
+           a:`<p>수술 후 Eye Dominance가 약 <strong>20~40%</strong>에서 변화할 수 있기 때문입니다.</p>
+              <p>따라서 양안을 모두 Plano로 수술한 후 Eye Dominance를 <strong>다시 평가</strong>하는 것을 권장합니다.</p>
+              <div class="note"><b>감각성 우세안 판단</b> — 양안에 각각 +0.75D ~ +1.25D를 추가하여, 더 흐리게 보이는 눈을 우세안으로 판단합니다.</div>`},
+        ]
+      },
+      {
+        name:"EDOF 유도",
+        items:[
+          {q:"LAL에서 EDOF 유도는 어떤 경우에 사용하나요?",
+           a:`<p>모노비전 또는 블렌디드 비전을 계획하는 환자 중, <strong>비우세안에 중간거리 또는 근거리 시력</strong>을 더 확보하고자 하는 경우 사용합니다.</p>
+              <p class="warn">다만, 원시 라식 병력이 있거나 각막 수차가 많은 환자에게는 권장하지 않습니다.</p>`},
+          {q:"LAL에서 EDOF를 유도하기 위한 조건은 무엇인가요?",
+           a:`<p>EDOF 유도는 다음 조건을 <strong>모두 만족</strong>해야 합니다.</p>
+              <ol class="step">
+                <li>첫 번째 Treatment에서 시행합니다.</li>
+                <li>Target은 <strong>-0.50D ~ -2.25D</strong> 사이로 설정합니다.</li>
+                <li>모든 경선이 Flattening되지 않아야 합니다.</li>
+              </ol>
+              <div class="note"><b>LDD Software 6.0.6 버전부터 추가</b><br>
+                1. MR과 Target의 차이가 <strong>0.50D 이상</strong>이어야 합니다.<br>
+                2. 일부 Flattening Profile에서도 음의 구면수차(Negative Spherical Aberration)를 유도할 수 있도록 변경되었습니다.</div>`},
+        ]
+      },
+      {
+        name:"약물 관련 주의사항",
+        items:[
+          {q:"UV 민감성 약물을 복용 중인 경우 어떻게 해야 하나요?",
+           a:`<p>다음과 같은 약물은 전신의 UV 민감성을 증가시키는 것으로 알려져 있습니다.</p>
+              <ul>
+                <li>Tetracycline · Doxycycline · Psoralens · Amiodarone</li>
+                <li>Phenothiazines · Chloroquine · Hydrochlorothiazide</li>
+                <li>Hypericin · Ketoprofen · Piroxicam · Lomefloxacin · Methoxsalen 등</li>
+              </ul>
+              <p><strong>1일 1회 복용</strong> 약물인 경우, LDD 치료 시작 <strong>1~2주 전에 중단</strong>하고 <strong>2차 Lock-in 완료 후 다시 복용</strong>하는 것을 권장합니다.</p>
+              <div class="note">1일 여러 번 복용하는 약물은 반감기에 따라 더 짧은 워시아웃 기간을 고려할 수 있습니다.</div>`},
+          {q:"망막 독성이 있는 약물을 복용 중인 경우 어떻게 해야 하나요?",
+           a:`<p>대표적으로 <strong>Tamoxifen</strong>과 같은 약물이 해당됩니다.</p>
+              <p class="warn">이러한 약물은 중단하거나 워시아웃을 시행하더라도 LDD 치료 중 위험이 충분히 감소하지 않을 수 있습니다.</p>`},
+          {q:"약물 관련 공통 원칙은 무엇인가요?",
+           a:`<p>무엇보다, 집도의는 해당 약물을 처방한 <strong>타과 전문의와 반드시 상의</strong>하여</p>
+              <ul>
+                <li>그 약물이 처방된 이유</li>
+                <li>LAL 시술의 이익 / 위험 비율</li>
+              </ul>
+              <p>을 함께 평가한 뒤 <strong>LAL 시행 여부 자체를 신중히 결정</strong>해야 합니다.</p>`},
+        ]
+      },
+    ]
+  },
+  {
+    key:"LDD", label:"LDD",
+    groups:[
+      {
+        name:"소요 시간",
+        items:[
+          {q:"Macromer Migration은 얼마나 걸리나요?",
+           a:`<p>약 <strong>48시간</strong>이 소요됩니다.</p>`},
+          {q:"Treatment는 얼마나 걸리나요?",
+           a:`<p>Treatment 시간은 <strong>17 ~ 152초</strong>입니다.</p>`},
+          {q:"Lock-in은 얼마나 걸리나요?",
+           a:`<p>Lock-in 1 : <strong>95초</strong></p>
+              <p>Lock-in 2 : <strong>125초</strong></p>`},
+          {q:"UPS 배터리를 사용할 경우 LDD는 얼마나 작동하나요?",
+           a:`<p>약 <strong>8분</strong> 동안 작동합니다.</p>`},
+        ]
+      },
+      {
+        name:"치료 범위 · 렌즈 변화",
+        items:[
+          {q:"LDD의 치료 가능 범위는 어떻게 되나요?",
+           a:`<p>최초 1회 Treatment에서는 최대 <strong>2D</strong>까지 조정할 수 있으며, 최대 3회의 Treatment를 통해 <strong>3~4D</strong>까지 조정이 가능합니다.</p>`},
+          {q:"Adjustment에 따른 렌즈 두께 변화는 얼마나 되나요?",
+           a:`<p>약 2D 조정 시 <strong>40~60µm</strong> 정도 변화합니다.</p>`},
+        ]
+      },
+      {
+        name:"수술 준비 (절개 · 전낭절개)",
+        items:[
+          {q:"권장 전낭절개 크기는 어떻게 되나요?",
+           a:`<ul>
+                <li><strong>CCC : 5.2mm</strong></li>
+                <li><strong>Femto : 5.0mm</strong></li>
+                <li><strong>Zepto : 5.1mm</strong></li>
+                <li><strong>Incision : 2.8mm</strong></li>
+              </ul>
+              <div class="note">CCC는 더 크게 절개하더라도 원형성이 유지되고 Optic Capture가 잘 이루어진다면 사용할 수 있습니다.</div>`},
+        ]
+      },
+      {
+        name:"UV 조사 파라미터",
+        items:[
+          {q:"Treatment 시 UV 조사 범위는 어떻게 되나요?",
+           a:`<ul>
+                <li>Myopic : <strong>5.3mm</strong></li>
+                <li>Hyperopic : <strong>5.6mm</strong></li>
+              </ul>`},
+          {q:"Lock-in 시 UV 조사 방법은 어떻게 되나요?",
+           a:`<p><strong>Lock-in 1</strong> : 6mm를 조사하며 주변부를 더 강하게 조사합니다. 치료 후 약 <strong>+0.25D</strong> 변화가 발생할 수 있습니다.</p>
+              <p><strong>Lock-in 2</strong> : 6mm를 조사하며 중심부를 더 강하게 조사합니다. 치료 후 약 <strong>-0.25D</strong> 변화가 발생할 수 있습니다.</p>`},
+          {q:"렌즈가 중심에서 벗어난 경우에도 렌즈 중심에 UV를 조사해야 하는 이유는 무엇인가요?",
+           a:`<p>UV가 렌즈의 광학부를 벗어나 <strong>망막에 조사되는 것을 방지</strong>하기 위해서입니다.</p>`},
+        ]
+      },
+      {
+        name:"측정 · 타겟 설정",
+        items:[
+          {q:"MR을 6m보다 짧은 거리에서 측정하면 어떻게 되나요?",
+           a:`<p>검사거리의 영향으로 <strong>근시 방향의 오차</strong>가 발생할 수 있습니다. 따라서 검사거리에 맞는 굴절값 보정을 적용해야 합니다.</p>
+              <div class="note">예: 4m에서는 약 <b>+0.25D</b> 보정이 필요합니다.</div>`},
+          {q:"네 번째 Treatment를 진행할 때는 Target을 어떻게 설정하나요?",
+           a:`<p>목표 굴절보다 <strong>0.25D 더 과교정(Over Correction)</strong>하여 Target을 설정하는 것을 권장합니다.</p>
+              <div class="ex">MR -0.50D를 Target -0.75D로 변경하려는 경우 → Target을 <strong>-1.00D</strong>로 입력</div>`},
+        ]
+      },
+      {
+        name:"안전 · 예외 상황",
+        items:[
+          {q:"LDD 치료 후 ActiveShield는 언제 활성화되나요?",
+           a:`<p>치료가 완료된 후 <strong>빛에 노출되는 즉시</strong> 활성화됩니다.</p>`},
+          {q:"LDD 치료 중 중심 이탈로 UV가 망막에 조사된 경우 어떻게 되나요?",
+           a:`<p>현재까지 광독성이 보고된 사례는 없습니다.</p>
+              <p>다만, 경미하게 노출된 경우 일시적으로 <strong>적색시(Red Vision)</strong>를 느낄 수 있습니다.</p>`},
+        ]
+      },
+    ]
+  },
+];
+
+/* ------------------------------------------------------------------
+   렌더링
+------------------------------------------------------------------ */
+const tabsEl = document.getElementById("tabs");
+const contentEl = document.getElementById("content");
+
+function count(cat){return cat.groups.reduce((n,g)=>n+g.items.length,0);}
+
+DATA.forEach((cat,ci)=>{
+  const tab=document.createElement("button");
+  tab.className="tab"+(ci===0?" active":"");
+  tab.innerHTML=`${cat.label}<span class="cnt">${count(cat)}</span>`;
+  tab.onclick=()=>switchTab(ci);
+  tabsEl.appendChild(tab);
+
+  const panel=document.createElement("div");
+  panel.className="panel"+(ci===0?" active":"");
+  panel.dataset.idx=ci;
+
+  cat.groups.forEach(g=>{
+    const gl=document.createElement("div");
+    gl.className="group-label";
+    gl.textContent=g.name;
+    panel.appendChild(gl);
+
+    g.items.forEach(it=>{
+      const item=document.createElement("div");
+      item.className="item";
+      item.innerHTML=`
+        <button class="q"><span>${it.q}</span><span class="icon"></span></button>
+        <div class="a-wrap"><div class="a">${it.a}</div></div>`;
+      const btn=item.querySelector(".q");
+      const wrap=item.querySelector(".a-wrap");
+      btn.onclick=()=>{
+        const open=item.classList.contains("open");
+        if(open){item.classList.remove("open");wrap.style.maxHeight=null;}
+        else{item.classList.add("open");wrap.style.maxHeight=wrap.scrollHeight+"px";}
+      };
+      panel.appendChild(item);
+    });
+  });
+  contentEl.appendChild(panel);
+});
+
+function switchTab(idx){
+  document.querySelectorAll(".tab").forEach((t,i)=>t.classList.toggle("active",i===idx));
+  document.querySelectorAll(".panel").forEach((p,i)=>p.classList.toggle("active",i===idx));
+  document.querySelectorAll(".panel .item.open").forEach(it=>{
+    it.classList.remove("open");
+    it.querySelector(".a-wrap").style.maxHeight=null;
+  });
+}
+</script>
+</body>
+</html>
