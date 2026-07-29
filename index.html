@@ -112,49 +112,74 @@ const DATA = [
     key:"LAL", label:"LAL",
     groups:[
       {
-        name:"렌즈 특성",
+        name:"소개 (Introduction)",
         items:[
+          {q:"LAL(Light Adjustable Lens)이란 무엇인가요?",
+           a:`<p>LAL은 수술 후 LDD(Light Delivery Device)를 이용해 자외선을 조사하여 굴절력을 조정할 수 있는 인공수정체(IOL)입니다. 백내장 수술 후 환자의 실제 시력을 확인한 뒤 원하는 도수로 추가 조정할 수 있는 것이 가장 큰 특징입니다.</p>`},
+          {q:"LAL은 일반 단초점 IOL과 무엇이 다른가요?",
+           a:`<p>일반 단초점 IOL은 수술 시 결정된 도수를 변경할 수 없지만, LAL은 수술 후 LDD를 이용하여 근시·원시·난시를 추가로 조정할 수 있습니다. 이를 통해 보다 정확한 목표 굴절력을 얻을 수 있습니다.</p>`},
+          {q:"LAL+와 LAL의 차이점은 무엇인가요?",
+           a:`<p>재질과 조정 원리는 동일합니다. LAL+는 렌즈 자체의 광학 설계를 통해 더 넓은 초점심도(DOF)를 제공하도록 개발된 렌즈입니다.</p>`},
+          {q:"LAL은 어떤 환자에게 적합한가요?",
+           a:`<p>수술 후 굴절 오차를 최소화하고 싶은 환자, 정확한 시력 결과를 원하는 환자, 기존 각막굴절수술 병력이 있거나 굴절 예측이 어려운 환자에서 특히 유용할 수 있습니다. 최종 적합 여부는 환자의 눈 상태와 의사의 판단에 따라 결정됩니다.</p>`},
+          {q:"LAL의 장점은 무엇인가요?",
+           a:`<p>수술 후 실제 시력을 확인한 뒤 굴절력을 조정할 수 있어 목표 굴절력에 더 가깝게 도달할 수 있으며, 토릭 IOL과 달리 축 회전에 의한 교정 효과 감소 우려가 없습니다. 모노비전도 체험 후 결정할 수 있습니다.</p>`},
+          {q:"LAL의 한계는 무엇인가요?",
+           a:`<p>Adjustment와 Lock-in이 완료될 때까지 여러 번 병원을 방문해야 하며, 그 기간 동안에는 UV 차단 안경을 착용해야 합니다. 또한 모든 환자에게 적용되는 것은 아니며, 적응증을 고려해야 합니다.</p>`},
+          {q:"LAL은 왜 Silicone 재질을 사용하나요?",
+           a:`<p>LAL은 자외선 조사에 따라 렌즈 내부의 광반응성 물질(Macromer)이 이동하고 중합되는 원리를 이용합니다. 이러한 광조절 기능을 구현하기 위해 Silicone 기반 재질이 사용됩니다.</p>`},
+        ]
+      },
+      {
+        name:"광학 특성 (Optics)",
+        items:[
+          {q:"LAL의 DOF는 어느 정도인가요?",
+           a:`<p>LAL의 초점심도(DOF)는 약 <strong>1.37D</strong>입니다. 따라서 일정 범위의 굴절 오차에서도 비교적 선명한 시력을 유지할 수 있습니다.</p>`},
+          {q:"LAL의 DOF 1.37D는 무엇을 의미하나요?",
+           a:`<p>약 1.37D 범위에서 기능적인 시력을 유지할 수 있다는 의미입니다. 20/20 수준에서는 대략 ±0.5D 범위에서 20/20이 유지됩니다.</p>`},
           {q:"LAL은 비구면 렌즈인가요?",
-           a:`<p>LAL은 <strong>-0.375µm의 음의 구면수차(Negative Spherical Aberration)</strong>를 적용한 비구면 렌즈입니다.</p>`},
-          {q:"LAL의 렌즈 두께는 어떻게 되나요?",
-           a:`<p>도수가 높을수록 렌즈가 두꺼워지고, 도수가 낮을수록 얇아집니다.</p>
-              <p>렌즈 두께는 약 <strong>0.9 ~ 1.3mm</strong>입니다.</p>`},
+           a:`<p>네. LAL은 <strong>-0.375µm의 음의 구면수차(Negative Spherical Aberration)</strong>를 적용한 비구면 렌즈입니다.</p>
+              <div class="note">이는 렌즈 고유의 설계값이며, 아래 EDOF 유도 항목에서 다루는 '추가 유도되는 음의 SA'와는 다른 개념입니다.</div>`},
+          {q:"음의 구면수차(Negative SA)란 무엇인가요?",
+           a:`<p>음의 구면수차는 중심부와 주변부를 통과하는 빛의 초점 위치 차이를 조절하는 광학 특성입니다. 적절한 양의 음의 구면수차는 초점심도를 넓히는 데 도움이 될 수 있습니다.</p>`},
+          {q:"음의 SA가 증가하면 어떤 장점이 있나요?",
+           a:`<p>초점심도가 넓어져 일정 범위의 굴절 오차에서도 비교적 선명한 시력을 유지할 수 있습니다. 다만 효과는 환자의 눈 상태에 따라 달라질 수 있습니다.</p>`},
+          {q:"환자에게 LAL은 어떻게 설명하는 것이 좋나요?",
+           a:`<p>"LAL은 수술 후 도수 조절이 가능한 인공수정체이며, 초점심도가 향상된 비구면 단초점 렌즈입니다."라고 설명하는 것이 적절합니다.</p>`},
         ]
       },
       {
-        name:"수술 준비 (절개 · 전낭절개)",
+        name:"Surgery Planning · 타겟 설정",
         items:[
-          {q:"권장 전낭절개 크기는 어떻게 되나요?",
-           a:`<ul>
-                <li><strong>CCC : 5.2mm</strong></li>
-                <li><strong>Femto : 5.0mm</strong></li>
-                <li><strong>Zepto : 5.1mm</strong></li>
-                <li><strong>Incision : 2.8mm</strong></li>
-              </ul>
-              <div class="note">CCC는 더 크게 절개하더라도 원형성이 유지되고 Optic Capture가 잘 이루어진다면 사용할 수 있습니다.</div>`},
-        ]
-      },
-      {
-        name:"타겟 · 렌즈 선택",
-        items:[
+          {q:"양안을 모두 Plano로 수술하는 이유는 무엇인가요?",
+           a:`<p>수술 후 Eye Dominance가 약 <strong>20~40%</strong>에서 변화할 수 있기 때문입니다. 따라서 양안을 모두 Plano로 수술한 후 Eye Dominance를 다시 평가하는 것을 권장합니다.</p>`},
+          {q:"감각성 우세안(Sensory Dominance)이란 무엇인가요?",
+           a:`<p>감각성 우세안은 양안을 함께 사용할 때 뇌가 더 선명하다고 인식하여 우선적으로 사용하는 눈을 의미합니다. 감각성 우세안은 뇌가 가장 선호하는 눈이므로, 가장 중요한 원거리 시력을 이 눈에 맡기면 양안 융합이 자연스럽고 모노비전에 대한 적응이 더 쉬워질 가능성이 높습니다.</p>`},
+          {q:"감각성 우세안은 어떻게 검사하나요?",
+           a:`<p>양안을 정시(Plano)에 맞춘 상태에서 한쪽 눈에 <strong>+1.50D</strong>의 렌즈를 대어 시야를 약간 흐리게 합니다. 환자가 더 불편하게 느끼는 쪽이 감각성 우세안으로 판단됩니다.</p>`},
+          {q:"장기간 Monovision 환자는 어떻게 계획하나요?",
+           a:`<p>기존 모노비전에 잘 적응한 환자는 수술 단계에서 비우세안에 약 <strong>-0.50~-0.75D</strong> 정도의 근시를 목표로 계획하는 것을 고려할 수 있습니다.</p>`},
+          {q:"모노비전은 언제 결정하는 것이 좋나요?",
+           a:`<p>가능하면 양안을 Plano에 가깝게 수술한 후 Trial Lens를 이용해 환자의 적응도를 확인하고, 이후 Adjustment에서 최종 목표 굴절을 결정하는 것이 권장됩니다.</p>`},
+          {q:"Trial Lens를 사용하는 이유는 무엇인가요?",
+           a:`<p>환자가 원하는 원거리와 근거리 시력의 균형을 직접 경험하도록 하여 최종 Adjustment 목표를 보다 정확하게 결정하기 위해 사용합니다.</p>`},
           {q:"LAL 원거리·근거리 권장 도수가 있나요?",
            a:`<p><span class="tag">원거리</span> LAL / LAL+ : <strong>Plano ~ +0.25D</strong></p>
               <p><span class="tag">근거리</span> LAL : <strong>-0.50 ~ -1.00D</strong> &nbsp;/&nbsp; LAL+ : <strong>-0.50 ~ -0.75D</strong></p>`},
           {q:"K와 TK 중 어느 값을 사용하는 것이 좋나요?",
-           a:`<p>RxSight는 특정 측정 방법을 권장하지 않습니다.</p>
-              <p>평소 Surgeon이 사용하는 <strong>Lens Calculation 방식을 그대로</strong> 사용하는 것을 권장합니다.</p>`},
-          {q:"양안을 모두 Plano를 목표로 수술하는 이유는 무엇인가요?",
-           a:`<p>수술 후 Eye Dominance가 약 <strong>20~40%</strong>에서 변화할 수 있기 때문입니다.</p>
-              <p>따라서 양안을 모두 Plano로 수술한 후 Eye Dominance를 <strong>다시 평가</strong>하는 것을 권장합니다.</p>
-              <div class="note"><b>감각성 우세안 판단</b> — 양안에 각각 +0.75D~+1.25D를 추가해 흐림을 유발한 뒤, 더 또렷하게 느끼는 눈을 우세안으로 판단합니다.</div>`},
+           a:`<p>RxSight는 특정 측정 방법을 권장하지 않습니다. 평소 Surgeon이 사용하는 <strong>Lens Calculation 방식을 그대로</strong> 사용하는 것을 권장합니다.</p>`},
         ]
       },
       {
-        name:"EDOF 유도",
+        name:"EDOF · SA 유도",
         items:[
+          {q:"EDOF란 무엇인가요?",
+           a:`<p>EDOF(Extended Depth of Focus)는 초점심도를 넓혀 하나의 초점보다 더 넓은 거리에서 선명한 시력을 제공하는 광학 개념입니다.</p>`},
           {q:"LAL에서 EDOF 유도는 어떤 경우에 사용하나요?",
            a:`<p>모노비전 또는 블렌디드 비전을 계획하는 환자 중, <strong>비우세안에 중간거리 또는 근거리 시력</strong>을 더 확보하고자 하는 경우 사용합니다.</p>
               <p class="warn">다만, 원시 라식 병력이 있거나 각막 수차가 많은 환자에게는 권장하지 않습니다.</p>`},
+          {q:"첫 번째 Adjustment에서만 EDOF를 만들 수 있는 이유는 무엇인가요?",
+           a:`<p>첫 번째 Adjustment에서는 렌즈 내부에 있는 Macromer를 이용해 음의 구면수차를 유도할 수 있기 때문입니다. 이후에는 Macromer가 대부분 중합되어 추가적인 유도가 어렵습니다.</p>`},
           {q:"LAL에서 EDOF를 유도하기 위한 조건은 무엇인가요?",
            a:`<p>EDOF 유도는 다음 조건을 <strong>모두 만족</strong>해야 합니다.</p>
               <ol class="step">
@@ -164,7 +189,24 @@ const DATA = [
               </ol>
               <div class="note"><b>LDD Software 6.0.6 버전부터 추가</b><br>
                 1. MR과 Target의 차이가 <strong>0.50D 이상</strong>이어야 합니다.<br>
-                2. 일부 Flattening Profile에서도 음의 구면수차(Negative Spherical Aberration)를 유도할 수 있도록 변경되었습니다.</div>`},
+                2. 일부 Flattening Profile에서도 음의 구면수차를 유도할 수 있도록 변경되었습니다.</div>`},
+          {q:"LAL+에서도 추가적인 음의 SA를 만들 수 있나요?",
+           a:`<p>아닙니다. 첫 번째 Adjustment에서 유도되는 추가적인 음의 구면수차는 일반 LAL에서만 가능하며, LAL+에서는 추가로 유도되지 않습니다.</p>`},
+        ]
+      },
+      {
+        name:"수술 준비 · 렌즈 물성",
+        items:[
+          {q:"권장 전낭절개 크기는 어떻게 되나요?",
+           a:`<ul>
+                <li><strong>CCC : 5.2mm</strong></li>
+                <li><strong>Femto : 5.0mm</strong></li>
+                <li><strong>Zepto : 5.1mm</strong></li>
+                <li><strong>Incision : 2.8mm</strong></li>
+              </ul>
+              <div class="note">CCC는 더 크게 절개하더라도 원형성이 유지되고 Optic Capture가 잘 이루어진다면 사용할 수 있습니다.</div>`},
+          {q:"LAL의 렌즈 두께는 어떻게 되나요?",
+           a:`<p>도수가 높을수록 렌즈가 두꺼워지고, 도수가 낮을수록 얇아집니다. 렌즈 두께는 약 <strong>0.9 ~ 1.3mm</strong>입니다.</p>`},
         ]
       },
       {
@@ -199,8 +241,6 @@ const DATA = [
       {
         name:"소요 시간",
         items:[
-          {q:"Macromer Migration은 얼마나 걸리나요?",
-           a:`<p>약 <strong>48시간</strong>이 소요됩니다.</p>`},
           {q:"Treatment는 얼마나 걸리나요?",
            a:`<p>Treatment 시간은 <strong>17 ~ 152초</strong>입니다.</p>`},
           {q:"Lock-in은 얼마나 걸리나요?",
@@ -208,6 +248,19 @@ const DATA = [
               <p>Lock-in 2 : <strong>125초</strong></p>`},
           {q:"UPS 배터리를 사용할 경우 LDD는 얼마나 작동하나요?",
            a:`<p>약 <strong>8분</strong> 동안 작동합니다.</p>`},
+        ]
+      },
+      {
+        name:"Adjustment 원리 · 횟수",
+        items:[
+          {q:"LDD는 어떻게 굴절력을 변경하나요?",
+           a:`<p>LDD는 자외선을 조사하여 렌즈 내부 Macromer의 이동과 중합을 유도합니다. 이 과정에서 렌즈의 전면 형태가 변화하여 굴절력이 조정됩니다.</p>`},
+          {q:"Adjustment는 몇 번까지 가능한가요?",
+           a:`<p>일반적으로 최대 <strong>3회의 Treatment</strong>(최초 1회 필수)와 <strong>2회의 Lock-in</strong>(필수)을 시행할 수 있습니다. 실제 치료 횟수는 환자의 굴절 상태에 따라 달라질 수 있습니다.</p>`},
+          {q:"Adjustment 후 언제 안정되나요?",
+           a:`<p>조정 후 <strong>48시간 이내</strong>에 도수가 안정됩니다. 다음 조정이나 Lock-in은 최소 3일 간격을 두어야 합니다.</p>`},
+          {q:"Adjustment 후 다시 변경할 수 있나요?",
+           a:`<p>Lock-in을 시행하기 전까지는 추가 Adjustment를 통해 굴절력을 다시 조정할 수 있습니다. Lock-in이 완료되면 더 이상 굴절력 변경은 불가능합니다.</p>`},
         ]
       },
       {
@@ -230,21 +283,10 @@ const DATA = [
           {q:"동공은 몇 mm 이상 확장되어야 하나요?",
            a:`<p>LAL의 광학부 직경은 6mm이므로, 정확한 치료를 위해 최소 <strong>6mm 이상의 동공 확장</strong>을 권장합니다.</p>`},
           {q:"Lock-in 시 UV 조사 방법은 어떻게 되나요?",
-           a:`<p><strong>Lock-in 1</strong> : 6mm를 조사하며 주변부를 더 강하게 조사합니다. 치료 후 약 <strong>+0.25D</strong> 변화가 발생할 수 있습니다.</p>
-              <p><strong>Lock-in 2</strong> : 6mm를 조사하며 중심부를 더 강하게 조사합니다. 치료 후 약 <strong>-0.25D</strong> 변화가 발생할 수 있습니다.</p>`},
+           a:`<p><strong>Lock-in 1</strong> : 6mm를 조사하며 주변부를 더 강하게 조사합니다.</p>
+              <p><strong>Lock-in 2</strong> : 6mm를 조사하며 중심부를 더 강하게 조사합니다.</p>`},
           {q:"렌즈가 중심에서 벗어난 경우에도 렌즈 중심에 UV를 조사해야 하는 이유는 무엇인가요?",
            a:`<p>UV가 렌즈의 광학부를 벗어나 <strong>망막에 조사되는 것을 방지</strong>하기 위해서입니다.</p>`},
-        ]
-      },
-      {
-        name:"측정 · 타겟 설정",
-        items:[
-          {q:"MR을 6m보다 짧은 거리에서 측정하면 어떻게 되나요?",
-           a:`<p>검사거리의 영향으로 <strong>근시 방향의 오차</strong>가 발생할 수 있습니다. 따라서 검사거리에 맞는 굴절값 보정을 적용해야 합니다.</p>
-              <div class="note">예: 4m에서는 약 <b>+0.25D</b> 보정이 필요합니다.</div>`},
-          {q:"네 번째 Treatment를 진행할 때는 Target을 어떻게 설정하나요?",
-           a:`<p>목표 굴절보다 <strong>0.25D 더 과교정(Over Correction)</strong>하여 Target을 설정하는 것을 권장합니다.</p>
-              <div class="ex">MR -0.50D를 Target -0.75D로 변경하려는 경우 → Target을 <strong>-1.00D</strong>로 입력</div>`},
         ]
       },
       {
@@ -253,8 +295,7 @@ const DATA = [
           {q:"LDD 치료 후 ActiveShield는 언제 활성화되나요?",
            a:`<p>치료가 완료된 후 <strong>빛에 노출되는 즉시</strong> 활성화됩니다.</p>`},
           {q:"LDD 치료 중 중심 이탈로 UV가 망막에 조사된 경우 어떻게 되나요?",
-           a:`<p>현재까지 광독성이 보고된 사례는 없습니다.</p>
-              <p>다만, 경미하게 노출된 경우 일시적으로 <strong>적색시(Red Vision)</strong>를 느낄 수 있습니다.</p>`},
+           a:`<p>현재까지 광독성이 보고된 사례는 없습니다. 다만, 경미하게 노출된 경우 일시적으로 <strong>적색시(Red Vision)</strong>를 느낄 수 있습니다.</p>`},
         ]
       },
     ]
